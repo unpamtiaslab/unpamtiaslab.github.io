@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return!1">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Aslab Generator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script
+        crossorigin="anonymous"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <meta content="Asisten laboratorium schedule generator for university labs" name="description" />
+    <meta content="id" name="language" />
+    <meta content="Indra Dwi A | Xnuvers007" name="author" />
+    <meta content="asisten,lab,asistenlab,generator,schedule" name="keywords" />
+    <meta content="index, follow" name="robots" />
+    <link rel="stylesheet" src="./gaya.css" />
+</head>
+<body>
+    <div class="theme-toggle">
+        <button class="theme-btn" type="button" id="themeSwitch">
+            <i class="fas fa-sun"></i> <span>Light Mode</span>
+        </button>
+    </div>
+    <div class="main-container container-fluid">
+        <div class="app-container">
+            <div class="app-header">
+                <h1 class="app-title">Aslab Generator</h1>
+                <p class="app-subtitle">Generate professional lab announcements for students and lecturers</p>
+            </div>
+    
+            <div class="form-container">
+                <form autocomplete="on" id="labForm">
+                    <div class="form-section">
+                        <h5 class="form-section-title">Personal Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="name">Nama</label>
+                                <input class="form-control" id="name" placeholder="Masukkan nama asisten laboratorium" required autocomplete="on" />
+                                <div class="form-hint">Contoh: Indra Dwi A</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="bapakibu">Bapak/Ibu</label>
+                                <select class="form-select" id="bapakibu">
+                                    <option value="bapak">Bapak</option>
+                                    <option value="ibu">Ibu</option>
+                                </select>
+                                <label class="form-label" for="lecturer">Dosen</label>
+                                <input class="form-control" id="lecturer" placeholder="Masukkan nama dosen" required autocomplete="on" />
+                                <div class="form-hint">Contoh: Achmad Nursodiq</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="form-section">
+                        <h5 class="form-section-title">Schedule Details</h5>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="day">Hari</label>
+                                <select class="form-select" id="day">
+                                    <option value="Senin">Senin</option>
+                                    <option value="Selasa">Selasa</option>
+                                    <option value="Rabu">Rabu</option>
+                                    <option value="Kamis">Kamis</option>
+                                    <option value="Jum'at">Jum'at</option>
+                                    <option value="Sabtu">Sabtu</option>
+                                    <option value="Minggu">Minggu</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="time">Jam</label>
+                                <input class="form-control" id="time" placeholder="Contoh: 14.40 - 16.20" required autocomplete="on" />
+                                <div class="form-hint">Contoh: 14.40 - 16.20</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="room">Ruang</label>
+                                <select class="form-select" id="room">
+                                    <option value="782">782</option>
+                                    <option value="773">773</option>
+                                    <option value="775">775</option>
+                                    <option value="776">776</option>
+                                    <option value="611">611</option>
+                                    <option value="612">612</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="form-section">
+                        <h5 class="form-section-title">Course Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="subject">Mata Kuliah</label>
+                                <input class="form-control" id="subject" placeholder="Masukkan nama mata kuliah" required autocomplete="on" />
+                                <div class="form-hint">Contoh: Pemrograman 2</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="class">Kelas</label>
+                                <input class="form-control" id="class" placeholder="Masukan Kode kelas" required autocomplete="on" />
+                                <div class="form-hint">Contoh: 04TPLK004</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="form-section">
+                        <h5 class="form-section-title">Additional Details</h5>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="selamat">Salam Pembuka</label>
+                                <select class="form-select" id="selamat">
+                                    <option value="Selamat Pagi">Selamat Pagi</option>
+                                    <option value="Selamat Siang">Selamat Siang</option>
+                                    <option value="Selamat Sore">Selamat Sore</option>
+                                    <option value="Selamat Malam">Selamat Malam</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="periode">Periode</label>
+                                <select class="form-select" id="periode">
+                                    <option value="Periode ke-1(pertemuan 2 - sebelum UTS)">Periode ke-1 (sebelum UTS)</option>
+                                    <option value="Periode ke-2(setelah UTS - sebelum UAS)">Periode ke-2 (setelah UTS)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="pertemuan">Pertemuan</label>
+                                <select class="form-select" id="pertemuan">
+                                    <option value="pertemuan ke - 2 (2 sks dan 3 sks)">Pertemuan ke-2 (2 & 3 SKS)</option>
+                                    <option value="pertemuan ke - 8 (untuk 2 sks)">Pertemuan ke-8 (2 SKS)</option>
+                                    <option value="pertemuan ke - 11 (untuk 3 sks)">Pertemuan ke-11 (3 SKS)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" type="button" onclick="generateStudentAnnouncement()">
+                            <i class="fas fa-graduation-cap me-2"></i> Buat untuk Mahasiswa
+                        </button>
+                        <button class="btn btn-primary" type="button" onclick="generateLecturerAnnouncement()">
+                            <i class="fas fa-chalkboard-teacher me-2"></i> Buat untuk Dosen
+                        </button>
+                        <button class="btn btn-secondary" type="reset">
+                            <i class="fas fa-redo me-2"></i> Reset Form
+                        </button>
+                    </div>
+                </form>
+    
+                <div class="output-container fade-in" id="output" style="display: none;">
+                    <h4><i class="fas fa-bullhorn me-2"></i> Pengumuman Lab</h4>
+                    <div class="alert alert-success">
+                        <p id="announcementText"></p>
+                    </div>
+                    <button class="btn btn-info" type="button" id="copyBtn">
+                        <i class="fas fa-clipboard me-2"></i> Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p class="text-center mb-3">© 2024 Made with <i class="fas fa-heart text-danger"></i> by <a rel="noopener noreferrer" title="Instagram Indra" href="https://instagram.com/indradwi.25" target="_blank" class="fw-bold">Indra Dwi A</a> (Asisten Lab) All rights reserved.</p>
+            <p class="text-center mb-3">Follow us on social media:</p>
+            <div class="social-icons">
+                <a href="#" target="_blank" aria-label="YouTube" id="youtube" rel="noopener noreferrer" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Instagram" id="instagram" rel="noopener noreferrer" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./sekripawok.js" defer></script>
+</body>
+</html>
