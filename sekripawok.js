@@ -226,7 +226,7 @@ document.getElementById("copyBtn").addEventListener("click", function () {
 
 const p = {
   youtube: "https://www.youtube.com/@aslabti_unpam",
-  instagram: "https://www.instagram.com/indradwi.25/",
+  instagram: "https://www.instagram.com/aslabti_unpam/",
 };
 function applyLinks() {
   document.getElementById("youtube").href = p.youtube;
